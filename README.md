@@ -1,12 +1,13 @@
 # Whastsapp Cloud API Wrapper
 whatsapp-cloud-api-wrapper is a Node.js. Currently, it supports only sending messages to users. 
 ## Installation
+### NPM
 ```bash
-npm install <adding package soon>
+npm i wacloudwrapper
 ```
 ## Usage
 ```js
-import { WhatsappAPI } from '<adding package soon>'
+import { WhatsappAPI } from 'wacloudwrapper'
 
 // create object that can be used to send messages
 const messenger = new WhatsappAPI('YOUR_ACCESS_TOKEN', 'YOUR_SENDER_PHONE_NUMBER_ID')
