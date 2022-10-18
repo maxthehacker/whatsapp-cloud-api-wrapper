@@ -27,7 +27,11 @@ export const sendRequestBuilder = (senderPhoneNumberId: string, accessToken: str
         const { data: rawResult } = await axios.post(URL, data, { headers: HEADERS })
         const result = rawResult as OfficialSendMessageResult;
 
-        return result
+        return {
+            messageId: result.messages?.[0]?.id,
+            phoneNumber: result.contacts?.[0]?.input,
+            whatsappId: result.contacts?.[0]?.wa_id,
+        }
 
     } catch (error: unknown) {
         if (axios.isAxiosError(error)) {

@@ -1,4 +1,4 @@
-import { OfficialSendMessageResult, sendRequestBuilder } from "./utils/sendRequest"
+import { sendRequestBuilder } from "./utils/sendRequest"
 import { TextMessage, TemplateMessage, MediaMessage } from "./types/messages.types"
 
 interface PaylodBase {
@@ -15,7 +15,7 @@ export class WhatsappAPI {
 
     private accessToken: string;
     private senderPhoneNumberId: string;
-    private sendRequest: <T>(data: T) => Promise<OfficialSendMessageResult>;
+    private sendRequest;
 
     constructor(accessToken: string, senderPhoneNumberId: string) {
         this.accessToken = accessToken;
@@ -47,7 +47,7 @@ export class WhatsappAPI {
         })
     }
 
-    public async sendTemplate(to: string, name: string, languageCode: string, components: any) {
+    public async sendTemplate(to: string, name: string, languageCode: string, components: any = []) {
         this.sendRequest<TemplateMessage>({
             ...payloadBase,
             to,
