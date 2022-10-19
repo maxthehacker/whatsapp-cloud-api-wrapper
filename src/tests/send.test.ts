@@ -14,7 +14,6 @@ const expectResult = (result: any): void => {
     expect(typeof result.whatsappId).toBe("string");
 }
 
-
 const { env: { FROM_PHONE_NUMBER_ID, ACCESS_TOKEN, TO } } = process;
 
 describe("send functions", () => {

@@ -25,7 +25,7 @@ export class WhatsappAPI {
     }
 
     public async sendText(to: string, text: string, options: object | any) {
-        this.sendRequest<TextMessage>({
+        return this.sendRequest<TextMessage>({
             ...payloadBase,
             to,
             type: 'text',
@@ -37,7 +37,7 @@ export class WhatsappAPI {
     }
 
     public async sendDocument(to: string, url: string) {
-        this.sendRequest<MediaMessage>({
+        return this.sendRequest<MediaMessage>({
             ...payloadBase,
             to,
             type: 'document',
@@ -48,7 +48,7 @@ export class WhatsappAPI {
     }
 
     public async sendTemplate(to: string, name: string, languageCode: string, components: any = []) {
-        this.sendRequest<TemplateMessage>({
+        return this.sendRequest<TemplateMessage>({
             ...payloadBase,
             to,
             type: 'template',
