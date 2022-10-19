@@ -1,3 +1,4 @@
+![tests](https://github.com/maxthehacker/whatsapp-cloud-api-wrapper/actions/workflows/tests.yml/badge.svg)
 # Whastsapp Cloud API Wrapper
 whatsapp-cloud-api-wrapper is a Node.js. Currently, it supports only sending messages to users. 
 ## Installation
