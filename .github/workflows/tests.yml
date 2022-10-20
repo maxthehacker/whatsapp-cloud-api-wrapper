@@ -1,9 +1,9 @@
 name: Run Unit Tests and Lint Files
 "on": push
 env:
-  FROM_PHONE_NUMBER_ID: "100347429526023"
-  ACCESS_TOKEN: "EABUAf4zkrC8BAPRjVNgb4eudUH0qnlmWqyojZBLf3irBf7aCaVP1ws007I1jgK0uXwLFWF4bOanrBw6Ne9bS2XAu8WSVuIXcMpM6WsOvkYmg9ePLGHT4d4yA406ORsn6kmQjOTzV4PVpuWUmBf5ysWRTkIKe8k4ZCLLgAPzFE5mljCQQEEE62ltZAjEtafZBVMnWU7ec6AZDZD"
-  TO: "919701188161"
+  FROM_PHONE_NUMBER_ID: ${{secrets.PHONE_NUMBER_ID}}
+  ACCESS_TOKEN: ${{secrets.TEST_ACCESS_TOKEN}}
+  TO: ${{secrets.TO}}
 jobs:
   unit_test-lint:
     runs-on: ubuntu-latest
